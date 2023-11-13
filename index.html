@@ -83,24 +83,24 @@
   $list.append("<li>Even newer list item</li>");
   $("aside").empty();
   $("aside").text("We apologize for the list.");
-  $(".col-sm-4");
 
-  let RGB = returnRGB($('.form-control'));
 
-  debugger;
+  $('.form-control').on('change',function(){
+    let RGB = returnRGB($('.form-control'));
+    changeBackgroundColor(RGB)} );
 
-  $('.form-control').on('click',console.log("test") );
-  // changeBackgroundColor(RGB)
+  $("img").on("click",function(evt){evt.target.remove()})
 
   /** takes RGB string, changes background color */
 
   function changeBackgroundColor(RGB) {
+    console.log("in ChangeBackgroundColor");
     $('body').css('background-color',RGB);
   }
 
 
 /** takes in RBG form, returns RGB CSS string */
-    function returnRGB($formControl) {
+  function returnRGB($formControl) {
     let r = $formControl[0].value;
     let b = $formControl[1].value;
     let g = $formControl[2].value;
